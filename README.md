@@ -1,3 +1,3 @@
 # POO
 
-Exercicios referentes as aulas de Programação orientada a objeto
+Exercicios referentes as aulas de Programação Orientada a Objeto.
