@@ -3,9 +3,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define t 10
 
-void gera_vet(int v[t])
+void gera_vet(int *v, int t)
 {
     srand(time(NULL));
     int i;
@@ -17,7 +16,7 @@ void gera_vet(int v[t])
     }
 }
 
-int maior_valor(int v[t])
+int maior_valor(int *v, int t)
 {
     int i;
     int maior = v[0];
@@ -35,11 +34,12 @@ int maior_valor(int v[t])
 
 int main()
 {
+    int t = 10;
     int v[t];
 
-    gera_vet(v);
+    gera_vet(v, t);
 
-    int x = maior_valor(v);
+    int x = maior_valor(v, t);
 
     printf("O maior valor do vetor é: %d\n", x);
 }
