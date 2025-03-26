@@ -68,7 +68,7 @@ public class Carro {
 	}
 	
 	public int getVelocidade() {
-		return this.getVelocidade();
+		return this.velocidade;
 	}
 	
 	
@@ -80,6 +80,15 @@ public class Carro {
 		System.out.println("Placa : " + this.getPlaca());
 		System.out.println("Velocidade : " + getVelocidade() + "KM/H");
 		System.out.println("-------------------------------------------");
+	}
+
+	public String toString()
+	{
+		return "\nNome : " + this.getNome()+
+				"\nCor : " + this.getCor() +
+				"\nPotencia : " + this.getPotencia() +
+				"\nPlaca :" + this.getPlaca()+
+				"\nVelocidade : " + getVelocidade() + "KM/H";
 	}
 	
 	

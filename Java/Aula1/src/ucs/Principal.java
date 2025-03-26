@@ -30,9 +30,9 @@ public class Principal {
 		for (int j = 0; j < i; j++) {
 			c1.acelera();
 		}
-		
-			
-		c1.mostra();
+
+
+		System.out.println(c1);
 		
 		sc.close();
 
