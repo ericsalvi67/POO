@@ -1,7 +1,4 @@
 /bin/
-*.classpath
-*.name
-*.class
 *.xml
 *.iml
 *.idea
