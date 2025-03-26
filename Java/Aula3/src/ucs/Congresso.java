@@ -12,13 +12,16 @@ public class Congresso {
 		FichaInscricao f1 = c.criaFichas(sc);
 		FichaInscricao f2 = c.criaFichas(sc);
 		
+		System.out.println(f1);
+		System.out.println(f2);
+		
 		
 		sc.close();
 		
 		
 	}
 	
-	public static FichaInscricao criaFichas(Scanner sc)
+	public FichaInscricao criaFichas(Scanner sc)
 	{
 		
 		FichaInscricao fichas = new FichaInscricao();
