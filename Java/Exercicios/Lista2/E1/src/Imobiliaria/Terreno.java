@@ -4,8 +4,16 @@ public class Terreno
 {
 	private int lado;
 	private int largura;
+	private Endereco endereco;
+	private Pessoa dono;
 	
 	
+	public Pessoa getDono() {
+		return dono;
+	}
+	public void setDono(Pessoa dono) {
+		this.dono = dono;
+	}
 	public int getArea() {
 		return getLado()*getLargura();
 	}
@@ -21,12 +29,11 @@ public class Terreno
 	public void setLargura(int largura) {
 		this.largura = largura;
 	}
-	
-	
-	public Terreno(int lado, int largura) {
-		super();
-		this.lado = lado;
-		this.largura = largura;
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 	
 	
@@ -34,7 +41,7 @@ public class Terreno
 	{
 		return "\n ALTURA: "+ this.lado +
 			   "\n LARGURA: "+ this.largura +
-			   "\n AREA: "+ this.lado*this.largura + "\n";
+			   "\n AREA: "+ this.getArea() + "\n";
 	}
 	
 	
