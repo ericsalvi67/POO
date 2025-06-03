@@ -37,6 +37,17 @@ public class ContaBancaria {
 		setSaldo(quantia);
 	}
 	
+	public void saca(float quantia) throws ContaException {
+		if (quantia <= 0)
+			throw new ContaException("R$" + quantia);
+		
+		if(quantia > this.getSaldo())
+			throw new ContaException("R$" + quantia); 
+		
+		System.out.println("Sacando.. "+ quantia);
+		setSaldo(this.getSaldo() - quantia);
+	}
+	
 	@Override
 	public String toString() {
 		return "ContaBancaria [numero=" + numero + ", saldo=" + saldo + "]";
