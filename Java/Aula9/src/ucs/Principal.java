@@ -2,6 +2,7 @@ package ucs;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -23,7 +24,7 @@ public class Principal {
 		
 		canetas.add(c);
 		canetas.add(new caneta(2, "Azul"));
-		canetas.add(new caneta(3, "Vermelha"));
+		canetas.add(new caneta(9, "Vermelha"));
 		
 		
 		for (int i = 0; i < canetas.size(); i++) {
@@ -52,20 +53,56 @@ public class Principal {
 			System.out.println("Nao achou");
 		}
 		
-		System.out.println("------------------------------------------------------------------------");
-		
 		List<caneta> canetas2 = new LinkedList<>();
-		canetas2.add(new caneta(6, "Roxo"));
+		canetas2.add(new caneta(3, "Roxo"));
 		canetas2.add(new caneta(7, "Verde"));
 		
 		canetas.addAll(canetas2);
+		
+		System.out.println("-------------------------------ANTES-----------------------------------------");
 		
 		for (caneta ca : canetas) {
 			System.out.println(ca);
 		}
 		
-		System.out.println("------------------------------------------------------------------------");
+		System.out.println("-----------------------------------DEPOIS da ordem decrescente de cod-------------------------------------");
+		
+		Collections.sort(canetas, new canetaCodigoDecrescenteComparator());
+		
+		for (caneta ca : canetas) {
+			System.out.println(ca);
+			
+		}
+		
+		System.out.println("-----------------------------------DEPOIS da ordem crescente de cod-------------------------------------");
+		
+		Collections.sort(canetas, new canetaCodigoCrescenteComparator());
+		
+		for (caneta ca : canetas) {
+			System.out.println(ca);
+		}
+		
+		System.out.println("-----------------------------------DEPOIS da ordem variavel de cod-------------------------------------");
+				
+		Collections.sort(canetas, new canetaCodigoComparator(canetaCodigoComparator.DECRESCENTE));
+		
+		for (caneta ca : canetas) {
+			System.out.println(ca);
+		}
+		
+		System.out.println("-----------------------------------DEPOIS da ordem variavel de COR-------------------------------------");
+		
+		Collections.sort(canetas, new canetaCorComparator(canetaCorComparator.CRESCENTE));
+		
+		for (caneta ca : canetas) {
+			System.out.println(ca);
+		}
 
+		caneta maximo = Collections.max(canetas, new canetaCodigoComparator(canetaCodigoComparator.DECRESCENTE));
+		System.out.println("MAX : "+ maximo);
+		caneta minimo = Collections.min(canetas, new canetaCodigoComparator(canetaCodigoComparator.DECRESCENTE));
+		System.out.println("MIN : "+ minimo);
+		
 	}
 
 }

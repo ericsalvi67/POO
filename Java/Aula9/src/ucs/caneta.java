@@ -2,7 +2,7 @@ package ucs;
 
 import java.util.Objects;
 
-public class caneta {
+public class caneta implements Comparable <caneta>{
 	
 	private int cod;
 	private String cor;
@@ -60,6 +60,11 @@ public class caneta {
 			return false;
 		caneta other = (caneta) obj;
 		return cod == other.cod;
+	}
+
+	@Override
+	public int compareTo(caneta o) {
+		return o.cod - this.cod;
 	}
 	
 
