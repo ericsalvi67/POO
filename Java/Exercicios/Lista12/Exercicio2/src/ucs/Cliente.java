@@ -1,6 +1,6 @@
 package ucs;
 
-public class Cliente {
+public class Cliente implements Comparable <Cliente> {
 	
 	int id;
 	String nome;
@@ -53,6 +53,11 @@ public class Cliente {
 	@Override
 	public String toString() {
 		return "Cliente [id=" + id + ", nome=" + nome + ", telefone=" + telefone + ", idade=" + idade + "]";
+	}
+
+	@Override
+	public int compareTo(Cliente o) {
+		return this.getNome().compareTo(o.getNome());
 	}
 	
 	

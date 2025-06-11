@@ -1,6 +1,7 @@
 package ucs;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Principal {
@@ -30,8 +31,56 @@ public class Principal {
 		
 		for (Cliente c : clientes)
 			System.out.println(c);
+		
+		List<Cliente> clientes2 = new ArrayList<>();
+		
+		System.out.println("---------------------------------------------------------------------------");
+		
+		p.copiaList(clientes,clientes2);
+		
+		for (Cliente c : clientes2)
+			System.out.println(c);
+		
+		System.out.println("---------------------------------------------------------------------------");
+		
+		Collections.sort(clientes, new ClienteNomeComparator(ClienteNomeComparator.CRESCENTE));
+		
+		for (Cliente c : clientes)
+			System.out.println(c);
+		
+		System.out.println("---------------------------------------------------------------------------");
+		
+		Collections.shuffle(clientes);
+		
+		for (Cliente c : clientes)
+			System.out.println(c);
+		
+		System.out.println("---------------------------------------------------------------------------");
+		
+		Collections.sort(clientes2, new ClienteNomeComparator(ClienteNomeComparator.CRESCENTE));
+		Collections.reverse(clientes2);
+		
+		for (Cliente c : clientes2)
+			System.out.println(c);
+		
+		System.out.println("---------------------------------------------------------------------------");
+		
+		Collections.shuffle(clientes2);
+		Collections.shuffle(clientes);
+		
+		Cliente c1 = Collections.max(clientes);
+		System.out.print("MAX: " + c1);
+		c1 = Collections.min(clientes);
+		System.out.println("\tMIN: " + c1);
+		c1 = Collections.max(clientes2);
+		System.out.print("MAX: " + c1);
+		c1 = Collections.min(clientes2);
+		System.out.println("\tMIN: " + c1);
 	}
-
+	
+	public void copiaList(List<Cliente> t1 , List<Cliente> t2) {
+		t2.addAll(t1);
+	}
 	
 	public void adicionaPrimeiro(List<Cliente> clientes , Cliente c) {
 		clientes.add(0, c);
